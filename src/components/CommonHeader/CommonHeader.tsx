@@ -9,13 +9,13 @@ export default function CommonHeader() {
             <div className={style.logo}>Julicom</div>
             <nav className={style.nav}>
                 <ul>
-                    <li><a>О НАС</a></li>
+                    <li><a href="#about">О НАС</a></li>
                     <li><a>УСЛУГИ</a></li>
                     <li><a>ПРОДАЖА З/Ч</a></li>
-                    <li><a>ЧАСТЫЕ ВОПРОСЫ</a></li>
+                    <li><a href="#faq">FAQ</a></li>
                     <li><a>ВАКАНСИИ</a></li>
                     <li><a>НОВОСТИ И АКЦИИ</a></li>
-                    <li><a>КОНТАКТЫ</a></li>
+                    <li><a href="#contacts">КОНТАКТЫ</a></li>
                 </ul>
             </nav>
             <div className={style.phones}>
