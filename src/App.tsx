@@ -1,11 +1,12 @@
 import './App.css'
+import EntryPage from "./pages/EntryPage/EntryPage";
 
 function App() {
 
     return (
         <>
             <div>
-                hello
+                <EntryPage/>
             </div>
         </>
     )
