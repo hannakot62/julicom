@@ -15,3 +15,7 @@
     background-color: #ffd648;
     transition: 0.3s ease;
 }
+.btn:disabled {
+    background-color: #ffd648;
+    cursor: auto;
+}
