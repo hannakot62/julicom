@@ -46,6 +46,14 @@
     width: 30px;
     height: 30px;
 }
+.header a {
+    text-decoration: none;
+    color: #e8ded5;
+}
+
+.header a:visited{
+    color: #e8ded5;
+}
 .user{
     display: flex;
     flex-direction: row;
@@ -59,12 +67,10 @@
     font-size: 1em;
     color: #ffc800;
     cursor: pointer;
-
 }
-.header a {
-    text-decoration: none;
+.user a{
+    color: #ffc800;
 }
-
-.header a:visited{
-    color: #e8ded5;
+.user a:visited{
+    color: #ffc800;
 }

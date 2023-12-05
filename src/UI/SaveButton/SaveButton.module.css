@@ -1,0 +1,17 @@
+.btn{
+    color: #282725;
+    background-color: #ffc800;
+    padding: 10px;
+    font-family: Montserrat, sans-serif;
+    font-weight: 700;
+    border-radius: 10px;
+    border: none;
+    font-size: 17px;
+    width: 120px;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background-color: #ffd648;
+    transition: 0.3s ease;
+}

@@ -1,19 +1,16 @@
-import CommonHeader from "../../components/CommonHeader/CommonHeader";
 import style from './EntryPage.module.css'
 import AboutItemsList from "../../components/AboutItemsList/AboutItemsList";
 import BenefitsList from "../../components/BenefitsList/BenefitsList";
 import FAQ from "../../components/FAQ/FAQ";
 import DarkGrayPhoneIcon from "../../svg/DarkGrayPhoneIcon";
-import CommonFooter from "../../components/CommonFooter/CommonFooter";
+import ScrollToTop from "../../components/ScrollToTop/ScrollToTop";
 
 
 
 export default function EntryPage() {
     return (
         <div className={style.wrapper}>
-
-            <CommonHeader/>
-
+            <ScrollToTop/>
 
             <div className={style.entry}>
                 <h1>Julicom - сервис</h1>
@@ -34,7 +31,7 @@ export default function EntryPage() {
 
 
             <div className={style.about}>
-                <a name="about">О НАС</a>
+                <a id="about" name="about">О НАС</a>
                 <AboutItemsList/>
             </div>
 
@@ -46,7 +43,7 @@ export default function EntryPage() {
 
 
             <div className={style.faq}>
-                <a name="faq">ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ (FAQ)</a>
+                <a name="faq" id='faq'>ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ (FAQ)</a>
                 <FAQ/>
             </div>
 
@@ -56,8 +53,7 @@ export default function EntryPage() {
             </div>
 
             <div className={style.contacts}>
-                <a name="contacts">КОНТАКТЫ</a>
-                <CommonFooter/>
+                <a name="contacts" id='contacts'>КОНТАКТЫ</a>
             </div>
 
         </div>

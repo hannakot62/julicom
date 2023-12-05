@@ -1,16 +1,15 @@
 import './App.css'
-import EntryPage from "./pages/EntryPage/EntryPage";
+import {BrowserRouter} from "react-router-dom";
+import AppRouter from "./routes/AppRouter";
 
 function App() {
-
     return (
         <>
-            <div>
-                <EntryPage/>
-            </div>
+            <BrowserRouter>
+                <AppRouter/>
+            </BrowserRouter>
         </>
     )
 }
-
 
 export default App

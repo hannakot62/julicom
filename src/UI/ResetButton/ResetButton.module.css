@@ -1,0 +1,16 @@
+.btn{
+    background-color: #282725;
+    color: #e8ded5;
+    padding: 10px;
+    font-family: Montserrat, sans-serif;
+    font-weight: 500;
+    border-radius: 10px;
+    border: none;
+    font-size: 17px;
+    width: 120px;
+    cursor: pointer;
+}
+.btn:hover{
+    background-color: #151515;
+    transition: 0.3s ease;
+}
