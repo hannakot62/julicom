@@ -2,8 +2,8 @@ import style from './EntryPage.module.css'
 import AboutItemsList from "../../components/AboutItemsList/AboutItemsList";
 import BenefitsList from "../../components/BenefitsList/BenefitsList";
 import FAQ from "../../components/FAQ/FAQ";
-import DarkGrayPhoneIcon from "../../svg/DarkGrayPhoneIcon";
 import ScrollToTop from "../../components/ScrollToTop/ScrollToTop";
+import ConsultNow from "../../components/ConsultNow/ConsultNow";
 
 
 
@@ -47,10 +47,7 @@ export default function EntryPage() {
                 <FAQ/>
             </div>
 
-            <div className={style.consult}>
-                <h1>Проконсультироваться сейчас: </h1>
-                <div className={style.telContainer}><a href="tel:+375291823405">+375 (29) 182-34-05</a> <div className={style.tel}><DarkGrayPhoneIcon/></div></div>
-            </div>
+            <ConsultNow/>
 
             <div className={style.contacts}>
                 <a name="contacts" id='contacts'>КОНТАКТЫ</a>

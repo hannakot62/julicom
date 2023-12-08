@@ -9,7 +9,6 @@ import {unsetUser} from "../../store/slices/userSlice";
 
 export default function CommonHeader() {
     const userId = useSelector(state => state.user.id)
-    console.log('```' + userId);
     const dispatch = useDispatch()
     const handleLogOut = useCallback(()=>{
         dispatch(unsetUser())
@@ -26,7 +25,7 @@ export default function CommonHeader() {
             <nav className={style.nav}>
                 <ul>
                     <li><a href="/entry#about">О НАС</a></li>
-                    <li><a>УСЛУГИ</a></li>
+                    <li><Link to='services'>УСЛУГИ</Link></li>
                     <li><a>ПРОДАЖА З/Ч</a></li>
                     <li><a href="/entry#faq">FAQ</a></li>
                     <li><a>ВАКАНСИИ</a></li>
