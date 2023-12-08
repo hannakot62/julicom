@@ -2,9 +2,24 @@ import style from './CommonHeader.module.css'
 import WhitePhoneIcon from "../../svg/WhitePhoneIcon";
 import YellowUserIcon from "../../svg/YellowUserIcon";
 import {Link} from "react-router-dom";
+import {useDispatch, useSelector} from "react-redux";
+import {useCallback, useEffect} from "react";
+import {unsetUser} from "../../store/slices/userSlice";
 
 
 export default function CommonHeader() {
+    const userId = useSelector(state => state.user.id)
+    console.log('```' + userId);
+    const dispatch = useDispatch()
+    const handleLogOut = useCallback(()=>{
+        dispatch(unsetUser())
+    },[])
+    useEffect(() => {
+        return () => {
+
+        };
+    }, [userId]);
+
     return (
         <header className={style.header}>
             <div className={style.logo}>Julicom</div>
@@ -29,7 +44,7 @@ export default function CommonHeader() {
             </div>
 
             <div className={style.user}>
-                <button><Link to="auth">Войти</Link></button>
+                {userId?<button onClick={(e)=>handleLogOut()}>Выйти</button>:<button><Link to="auth">Войти</Link></button>}
                 <div className={style.bigSvgContainer}>
                     <YellowUserIcon/>
                 </div>

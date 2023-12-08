@@ -1,18 +1,19 @@
 import style from './AuthPage.module.css'
 import ResetButton from "../../UI/ResetButton/ResetButton";
 import SaveButton from "../../UI/SaveButton/SaveButton";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {useNavigate} from "react-router-dom";
 import {useCallback, useEffect, useState} from "react";
 import useInput from '../../hooks/useInput'
+import {setUser} from "../../store/slices/userSlice";
 
 
 export default function AuthPage() {
-    const user = useSelector(state => state.user.user)
+    const userId = useSelector(state => state.user.id)
     const navigate = useNavigate()
-    const [isNew, setIsNew] = useState(false);
-    const [isValid, setIsValid] = useState(false);
-
+    const [isNew, setIsNew] = useState(false)
+    const [isValid, setIsValid] = useState(false)
+    const dispatch = useDispatch()
 
     const nameInput = useInput("", {})
     const emailInput = useInput("", {isEmpty: true, isEmail: true})
@@ -23,10 +24,10 @@ export default function AuthPage() {
     }
 
     useEffect(() => {
-        if (user !== null) {
+        if (userId !== '') {
             navigate("/")
         }
-    }, [user])
+    }, [userId])
 
     useEffect(() => {
         if (emailInput.isValid && passwordInput.isValid) {
@@ -39,12 +40,14 @@ export default function AuthPage() {
         nameInput.onChange()
         emailInput.onChange()
         passwordInput.onChange()
-    }, []);
+    }, [])
 
-    const handleSave = useCallback(()=>{
+    const handleSave = useCallback(() => {
         console.log(nameInput.value, emailInput.value, passwordInput.value)
-
-    },[isValid])
+        //todo запрос
+        dispatch(setUser({username: "Anna", email: emailInput.value, role: "user", id: "1"}))
+        navigate("/")
+    }, [isValid])
 
     return (
         <div className={style.wrapper}>

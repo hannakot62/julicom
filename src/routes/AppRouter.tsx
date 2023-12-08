@@ -11,8 +11,7 @@ export default function AppRouter(){
     return (
         <Routes>
             <Route element={<Layout/>}>
-            <Route path="/*" element={<EntryPage />} />
-                <Route path="/a" element={<>kkkk</>}/>
+                <Route path="/*" element={<EntryPage />} />
                 <Route path="/entry" element={<EntryPage />} />
                 <Route path='auth' element={<AuthPage/>}/>
             </Route>
