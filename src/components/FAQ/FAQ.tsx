@@ -1,4 +1,4 @@
-import SingleDropdown from "../SingleDropdown/SingleDropdown";
+import SingleDropdown from "../../UI/SingleDropdown/SingleDropdown";
 
 export default function FAQ(){
     const questions =[
