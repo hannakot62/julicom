@@ -1,31 +1,32 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-const initialState = {
-    items: new Map()
-}
+const initialState = []
+
 const itemsSlice = createSlice({
     name: 'items',
     initialState,
     reducers: {
         addItem(state, action) {
-            if (state.items.has(action.payload.id)) {
-                state.items.set(action.payload.id, state.items.get(action.payload.id) + 1)
+            const index = state.findIndex(i => i[0]=== action.payload)
+            if (index>-1) {
+                state[index][1] = state[index][1]+1
             } else {
-                state.items.set(action.payload.id, 1)
+                state.push([action.payload, 1])
             }
         },
         removeItem(state, action) {
-            if (state.items.get(action.payload.id) > 1) {
-                state.items.set(action.payload.id, state.items.get(action.payload.id) - 1)
+            const index = state.findIndex(i => i[0] === action.payload)
+            if (state[index][1] > 1) {
+                state[index][1] = state[index][1] - 1
             } else {
-                state.items.delete(action.payload.id)
+                state.splice(index, 1)
             }
         },
         emptyItems(state) {
-            state.items = new Map()
-        }
-    }
-})
+            state = []
+
+    }}}
+)
 
 export const { addItem, removeItem, emptyItems } = itemsSlice.actions
 export default itemsSlice.reducer

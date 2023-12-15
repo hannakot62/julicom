@@ -6,6 +6,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {useCallback, useEffect} from "react";
 import {unsetUser} from "../../store/slices/userSlice";
 import YellowShoppingCartIcon from "../../svg/YellowShoppingCartIcon";
+import ItemsCounter from "../ItemsCounter/ItemsCounter";
 
 
 export default function CommonHeader() {
@@ -50,6 +51,8 @@ export default function CommonHeader() {
                     {user.role === 'user' ? <YellowShoppingCartIcon/> :
                         <YellowUserIcon/>}
                 </div>
+                {user.role === 'user' && <ItemsCounter/>}
+
             </div>
         </header>
     )
