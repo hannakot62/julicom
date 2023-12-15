@@ -1,0 +1,115 @@
+.wrapper{
+    background-image: url("src/assets/tires-bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.wrapper>h1 {
+    color: #ffc800;
+    font-family: "Play Bold", sans-serif;
+    font-size: 50px;
+    text-align: center;
+    padding-top: 30px;
+    text-shadow: 3px 4px 5px rgba(0, 0, 0, 1);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper>h1>svg{
+    cursor: pointer;
+}
+
+
+.wrapper>p{
+    color: #e8ded5;
+    font-family: Montserrat, sans-serif;
+    text-align: center;
+    font-weight: 400;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
+}
+.wrapper a{
+    color: inherit;
+}
+
+.wrapper>h1>svg{
+    height: 40px;
+    width: 40px;
+    filter: drop-shadow(3px 4px 5px rgba(0, 0, 0, 1));
+    margin-left: 20px;
+    margin-right: 0;
+}
+
+.search{
+    /*width: 100%;*/
+    color: #e8ded5;
+    padding: 70px 0 0 70px;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    width: auto;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
+    font-size: 20px;
+}
+.search input{
+    width: 500px;
+    margin: 10px;
+}
+.search button{
+    padding: 10px;
+    border: none;
+    border-radius: 7px;
+    font-size: 15px;
+    font-family: Montserrat, sans-serif;
+    font-weight: 700;
+    margin: 0 10px 0 0 ;
+    cursor: pointer;
+}
+
+.find:hover{
+    background-color: #c59b01;
+    transition: 0.3s ease;
+}
+
+.find{
+    color: #282725;
+    background-color: #ffc800;
+}
+.reset{
+    background-color: #282725;
+    color: #ffc800;
+}
+.reset:hover{
+    background-color: #181817;
+    transition: 0.3s ease;
+}
+
+
+.radios{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    padding-left: 70px;
+}
+
+.radios label{
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
+    font-size: 15px;
+    color: #e8ded5;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    margin: 0 30px 0 0;
+    width: max-content;
+}
+
+.radios input{
+    width: auto;
+    margin: 0 5px 0 0;
+    accent-color: #ffc800;
+    cursor: pointer;
+}

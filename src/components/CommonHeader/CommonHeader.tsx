@@ -5,32 +5,33 @@ import {Link} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {useCallback, useEffect} from "react";
 import {unsetUser} from "../../store/slices/userSlice";
+import YellowShoppingCartIcon from "../../svg/YellowShoppingCartIcon";
 
 
 export default function CommonHeader() {
-    const userId = useSelector(state => state.user.id)
+    const user = useSelector(state => state.user)
     const dispatch = useDispatch()
-    const handleLogOut = useCallback(()=>{
+    const handleLogOut = useCallback(() => {
         dispatch(unsetUser())
-    },[])
+    }, [])
     useEffect(() => {
         return () => {
 
         };
-    }, [userId]);
+    }, [user.id]);
 
     return (
         <header className={style.header}>
             <div className={style.logo}>Julicom</div>
             <nav className={style.nav}>
                 <ul>
-                    <li><a href="/entry#about">О НАС</a></li>
+                    <li><a href="entry#about">О НАС</a></li>
                     <li><Link to='services'>УСЛУГИ</Link></li>
-                    <li><a>ПРОДАЖА З/Ч</a></li>
-                    <li><a href="/entry#faq">FAQ</a></li>
+                    <li><Link to="space_parts">ПРОДАЖА З/Ч</Link></li>
+                    <li><a href="entry#faq">FAQ</a></li>
                     <li><a>ВАКАНСИИ</a></li>
                     <li><a>НОВОСТИ И АКЦИИ</a></li>
-                    <li><a href="/entry#contacts">КОНТАКТЫ</a></li>
+                    <li><a href="entry#contacts">КОНТАКТЫ</a></li>
                 </ul>
             </nav>
             <div className={style.phones}>
@@ -43,9 +44,11 @@ export default function CommonHeader() {
             </div>
 
             <div className={style.user}>
-                {userId?<button onClick={(e)=>handleLogOut()}>Выйти</button>:<button><Link to="auth">Войти</Link></button>}
+                {user.id ? <button onClick={(e) => handleLogOut()}>Выйти</button> :
+                    <button><Link to="auth">Войти</Link></button>}
                 <div className={style.bigSvgContainer}>
-                    <YellowUserIcon/>
+                    {user.role === 'user' ? <YellowShoppingCartIcon/> :
+                        <YellowUserIcon/>}
                 </div>
             </div>
         </header>
